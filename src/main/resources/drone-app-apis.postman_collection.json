@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "95cf1108-b73b-4af7-bcb2-0087a47571bd",
+		"name": "drone-app-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registering a Drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"serialNumber\":\"12345671-1c\",\n    \"model\": \"heavyWeight\",\n    \"batteryCapacity\": 24\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/drones",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loading Medication for Specific Drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n      \"medicationId\":2,\n      \"quantity\":3\n  } \n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/drones/loading/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"loading",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking Available Drone for loading.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/drones/loading/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"loading",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Drone Medication Items",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/drones/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Battery Level of a Drone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/drones/1/battery",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drones",
+						"1",
+						"battery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loading a Medication Item.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/private/var/folders/5n/l5qhgvzd7s526bsg1mrj4llr0000gn/T/com.apple.Photos.NSItemProvider/version=1&uuid=8124D6B2-517E-44DF-99C6-9336FA7BCD96&mode=compatible&noloc=0.jpeg/abiral2.jpeg"
+						},
+						{
+							"key": "name",
+							"value": "abiral__2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "weight",
+							"value": "200",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "sdfdff_223",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/medication",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medication"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
